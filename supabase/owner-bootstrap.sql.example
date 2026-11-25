@@ -1,0 +1,7 @@
+-- First create the owner in Supabase Dashboard > Authentication > Users.
+-- Replace the reserved example address below with the exact owner login email.
+insert into public.owner_profiles (user_id, display_name, is_owner)
+select id, 'Store owner', true
+from auth.users
+where email = 'owner@your-domain.example'
+on conflict (user_id) do update set is_owner = true;

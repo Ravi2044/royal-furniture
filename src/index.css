@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #22231f;
+  background: #f5f0e7;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: #f5f0e7; }
+button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 3px solid #b89054;
+  outline-offset: 3px;
+}
+
+@layer components {
+  .page-shell { @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10; }
+  .eyebrow { @apply text-sm font-semibold uppercase tracking-[0.18em] text-royal-brown; }
+  .display-title { @apply font-display text-5xl font-semibold leading-[0.95] text-royal-green sm:text-6xl lg:text-7xl; }
+  .section-title { @apply font-display text-4xl font-semibold leading-tight text-royal-green sm:text-5xl; }
+  .btn-primary { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-royal-green px-6 py-3 text-base font-semibold text-white transition hover:bg-[#0f2c24] disabled:cursor-not-allowed disabled:opacity-60; }
+  .btn-secondary { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-royal-green/25 bg-white/70 px-6 py-3 text-base font-semibold text-royal-green transition hover:border-royal-green hover:bg-white; }
+  .field { @apply min-h-12 w-full rounded-2xl border border-royal-green/15 bg-white px-4 py-3 text-base text-royal-ink placeholder:text-royal-ink/45 focus:border-royal-green focus:outline-none; }
+  .card { @apply rounded-[2rem] border border-royal-green/10 bg-royal-paper shadow-soft; }
+}
+
+.grain {
+  background-image: radial-gradient(circle at 1px 1px, rgba(23,60,49,.1) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+::selection { color: #fff; background: #6d452a; }
